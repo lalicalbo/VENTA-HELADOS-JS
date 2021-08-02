@@ -3,7 +3,7 @@ console.log("cargando...")
 
 let vHelados = []
 let vVentas = []
-let opcion = 0
+let opcion = 0;
 
 const menu = `
 1. Agregar helado.
@@ -16,7 +16,7 @@ const menu = `
 `
 
 while (true) {
-  opcion = parseInt(prompt('Por favor indique una opción:\n' + menu))
+    opcion = parseInt(prompt('Por favor indique una opción:\n' + menu))
 
   if (opcion === 1) {
     agregarHelado()
@@ -118,3 +118,17 @@ function modHeladoNombre() {
     }
   }
 }
+
+
+function venderHelado() {
+  let helado = prompt(`elija el helado que quiere comprar:\n\n` + mostrarInventario())
+  let cant = prompt(`Elija la cantidad`)
+
+      if (cant > vHelados[helado].cantidad) {
+        alert(`Ha superado la cantidad de helados disponibles , la cantidad disponible es ${vHelados[helado].cantidad} ` )
+      } else {
+        vHelados[helado].cantidad = vHelados[helado].cantidad - cant
+        alert(" el total de la compra es " + (cant * vHelados[helado].precio ))
+      }
+  }
+  
