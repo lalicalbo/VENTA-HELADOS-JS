@@ -31,7 +31,7 @@ while (true) {
   } else if (opcion === 6) {
     modHeladoNombre()
   } else if (opcion === 7) {
-    alert('Saliendo del sistema.')
+    alert('Gracias por su compra.')
     break
   }
 
@@ -71,7 +71,7 @@ function eliminarHelado() {
 
 
 function modificarHelado() {
-  let elegir = prompt(`elija un helado del inventario:\n\n` + mostrarInventario())
+  let elegir = prompt(`Elija el helado que quiere modificar:\n\n` + mostrarInventario())
 
   let modificado = {
     nombre: prompt(`Elija nuevo nombre`),
@@ -94,7 +94,7 @@ function modificarHelado() {
 
 
 function modHeladoNombre() {
-  let nom = prompt(`elija el nombre  del helado del inventario:\n\n` + mostrarInventario())
+  let nom = prompt(`Elija el nombre  del helado a modificar:\n\n` + mostrarInventario())
 
   let modNom = {
     nombre: prompt(`Elija nuevo nombre`),
@@ -121,8 +121,8 @@ function modHeladoNombre() {
 
 
 function venderHelado() {
-  let helado = prompt(`elija el helado que quiere comprar:\n\n` + mostrarInventario())
-  let cant = prompt(`Elija la cantidad`)
+  let helado = prompt(`Elija el helado que quiere vender:\n\n` + mostrarInventario())
+  let cant = parseInt(prompt(`Elija la cantidad`))
 
       if (cant > vHelados[helado].cantidad) {
         alert(`Ha superado la cantidad de helados disponibles , la cantidad disponible es ${vHelados[helado].cantidad} ` )
